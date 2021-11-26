@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //bind the afspraak model to this user saying that each user has more afspraken
+    public function user(){
+        $this->hasMany("App\Afspraak","user_id");
+    }
 }
