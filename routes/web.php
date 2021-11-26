@@ -17,3 +17,7 @@ Route::get('/',"IndexController@loadIndexPage")->name("index");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::prefix("api")->group(function(){
+    route::get("show","APIController@loadAPIPage")->name("showapi");
+});
