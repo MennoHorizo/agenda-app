@@ -14,9 +14,27 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
-    <div class="flex-center position-ref full-height">
-        @include("includes.navbar")
-        @yield("content")
-    </div>
+    @if(isset($data))
+        @if($data["pagetype"] === "index")
+            <div class="flex-center position-ref full-height">
+                @include("includes.navbar")
+                @yield("content")
+            </div>
+        @else
+            <div id="app">
+                <div class="navbar-push-content-down">
+                    @include("includes.navbar")
+                </div>
+                @yield("content")
+            </div>
+        @endif
+    @else
+        <div id="app">
+            <div class="navbar-push-content-down">
+                @include("includes.navbar")
+            </div>
+            @yield("content")
+        </div>
+    @endif
 </body>
 </html>

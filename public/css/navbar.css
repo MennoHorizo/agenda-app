@@ -52,3 +52,7 @@ html, body {
 .custom-list-dropdown{
     list-style-type: none !important;
 }
+
+.navbar-push-content-down{
+    margin-bottom: 100px;
+}
